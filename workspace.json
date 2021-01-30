@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/nest"
-  },
+  "cli": { "defaultCollection": "@nrwl/nest" },
   "defaultProject": "server",
   "projects": {
     "server": {
@@ -36,21 +34,36 @@
         },
         "serve": {
           "executor": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "server:build"
-          }
+          "options": { "buildTarget": "server:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/server/**/*.ts"]
-          }
+          "options": { "lintFilePatterns": ["apps/server/**/*.ts"] }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": ["coverage/apps/server"],
           "options": {
             "jestConfig": "apps/server/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "graphql": {
+      "root": "libs/graphql",
+      "sourceRoot": "libs/graphql/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/graphql/**/*.ts"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/graphql"],
+          "options": {
+            "jestConfig": "libs/graphql/jest.config.js",
             "passWithNoTests": true
           }
         }
