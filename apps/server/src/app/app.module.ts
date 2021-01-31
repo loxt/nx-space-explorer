@@ -9,6 +9,7 @@ import { DatabaseConfig } from './database.config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { LIB_PATH } from '@space-explorer/graphql';
+import { LaunchModule } from './launch/launch.module';
 
 const lib = join(process.cwd(), LIB_PATH);
 
@@ -28,6 +29,7 @@ const lib = join(process.cwd(), LIB_PATH);
       imports: [ConfigModule],
       useClass: DatabaseConfig,
     }),
+    LaunchModule,
   ],
   controllers: [AppController],
   providers: [AppService],
