@@ -15,5 +15,9 @@
       "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": { "server": { "tags": [] }, "graphql": { "tags": [] } }
+  "projects": {
+    "server": { "tags": [] },
+    "graphql": { "tags": [] },
+    "types": { "tags": [] }
+  }
 }

@@ -8,7 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfig } from './database.config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
-import { LIB_PATH } from '@nx-space-explorer/graphql';
+import { LIB_PATH } from '@space-explorer/graphql';
 
 const lib = join(process.cwd(), LIB_PATH);
 
